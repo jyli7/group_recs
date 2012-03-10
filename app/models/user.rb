@@ -18,4 +18,10 @@ class User < ActiveRecord::Base
     single_result = open("http://api.hunch.com/api/v1/get-recommendations/?auth_token=#{self.auth_token}&topic_ids=list_book&query=#{query}&fields=title,stars,average_ratings").read
     single_result_json = JSON.parse(single_result)
   end
+  
+  def get_friends(user_auth_token, limit)
+    friends_list = open("http://api.hunch.com/api/v1/get-friends/?auth_token=8d0505b4ec38ec6b3e00b722e95575210ac3bb6a&limit=#{limit}").read
+    friends_list_json = JSON.parse(friends_list)
+    friends = friends_list_json["friends"]
+  end
 end

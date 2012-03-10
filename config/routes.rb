@@ -1,4 +1,14 @@
 Groupit::Application.routes.draw do
+  
+  root to: 'pages#index'
+  match 'after_hunch' => 'pages#after_hunch'
+  post '/pages/get_user_email' => 'pages#get_user_email'
+  
+  match '/recommendations/:user_id' => 'recommendations#show'
+  get '/users/:id/friends' => 'friends#index'
+
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -26,9 +26,15 @@ describe User do
     end
   end
   
+  describe "#get_friends" do
+    it "should return the user's friends'" do
+      @user.get_friends(@user.auth_token, 10).length.should >= 1
+    end
+  end
+  
   describe "validations" do
     it "requires an email" do
-      invalid_user = Factory.build(:user)
+      invalid_user = Factory.build(:user, :email => nil)
       invalid_user.should_not be_valid
     end
   end

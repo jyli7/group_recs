@@ -1,0 +1,5 @@
+<%= form_tag("/pages/get_user_email", :method => "post") do %>
+	<%= label_tag(:email, "Enter your email: ")%>
+	<%= text_field_tag(:email) %>
+	<%= submit_tag("Email")%>
+<% end %>
