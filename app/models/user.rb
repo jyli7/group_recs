@@ -19,9 +19,12 @@ class User < ActiveRecord::Base
     single_result_json = JSON.parse(single_result)
   end
   
-  def get_friends(user_auth_token, limit)
-    friends_list = open("http://api.hunch.com/api/v1/get-friends/?auth_token=8d0505b4ec38ec6b3e00b722e95575210ac3bb6a&limit=#{limit}").read
-    friends_list_json = JSON.parse(friends_list)
-    friends = friends_list_json["friends"]
+  def friends(limit = 50)
+    @friends ||= HunchAPI.get_friends(limit).map { |friend| Friend.new(friend) }
   end
+  
+  def group_recs(user_ids, limit = 25)
+    @group_recs ||= HunchAPI.get_group_recs(user_ids, limit).map { |rec| Rec.new(rec) }
+  end
+  
 end

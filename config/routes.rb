@@ -6,6 +6,8 @@ Groupit::Application.routes.draw do
   
   match '/recommendations/:user_id' => 'recommendations#show'
   get '/users/:id/friends' => 'friends#index'
+  post '/users/:id/create' => 'group_recs#create', :as => :user_group_recs
+  get '/users/:id' => 'group_recs#show', :as => :user_group_recs
 
   
   

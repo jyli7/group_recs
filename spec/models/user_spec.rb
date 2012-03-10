@@ -3,6 +3,7 @@ require 'spec_helper'
 describe User do
   before do 
     @user = Factory(:user, :email => "foo@bar.com", :auth_token => "b05a90da871cb1cbf32ad5a78ed0381469934c7d")
+    stub_friends_call  
   end
   
   describe "#get_auth_token" do
@@ -26,9 +27,10 @@ describe User do
     end
   end
   
-  describe "#get_friends" do
-    it "should return the user's friends'" do
-      @user.get_friends(@user.auth_token, 10).length.should >= 1
+  describe "#friends" do
+    it "should return a list of friends" do
+      @user.friends.length.should > 0
+      @user.friends.first.should be_a(Friend)
     end
   end
   
@@ -39,3 +41,5 @@ describe User do
     end
   end
 end
+
+  

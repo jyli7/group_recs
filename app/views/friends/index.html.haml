@@ -1,0 +1,14 @@
+=form_for :group_recs, :url => user_group_recs_path(@user) do |f|
+	%table
+		-@friends.each do |friend|
+			%tr
+				%td
+					= f.check_box friend.user_id
+				%td
+					= friend.user_id
+				%td
+					= friend.name
+				%td
+					= image_tag(friend.image_url)
+	=f.submit
+	

@@ -1,0 +1,11 @@
+%table
+	-@group_recs.each do |rec|
+		%tr
+			%td=rec.name
+			%td=image_tag(rec.image_url)
+			%td=rec.rating
+			%td=rec.description
+			%td=rec.url
+
+	
+		
