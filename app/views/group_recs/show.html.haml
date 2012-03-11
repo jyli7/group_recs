@@ -2,10 +2,11 @@
 	-@group_recs.each do |rec|
 		%tr
 			%td=rec.name
-			%td=image_tag(rec.image_url)
-			%td=rec.rating
+			%td=image_tag(rec.image_url, {:class => "movie_img"})
 			%td=rec.description
+			%td=rec.trailer
+			%td=rec.rating
+			%td=rec.rt_rating
 			%td=rec.url
 
-	
 		

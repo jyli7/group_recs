@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     @friends ||= HunchAPI.get_friends(limit).map { |friend| Friend.new(friend) }
   end
   
-  def group_recs(user_ids, limit = 25)
+  def group_recs(user_ids, limit = 15)
     @group_recs ||= HunchAPI.get_group_recs(user_ids, limit).map { |rec| Rec.new(rec) }
   end
   
