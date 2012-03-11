@@ -1,6 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'devise'
 gem 'haml-rails'
 gem 'rails', '3.1.0'
 

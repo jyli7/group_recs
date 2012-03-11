@@ -3,9 +3,21 @@ require 'open-uri'
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :set_token
+  before_filter :require_user
+  before_filter :set_token, :if => :current_user
+
+  private
+
+  def require_user
+    redirect_to login_url unless current_user
+  end
   
+  def current_user
+    return unless session[:user_id]
+    @current_user ||= User.find(session[:user_id])
+  end
+    
   def set_token
-    HunchAPI.token = "b05a90da871cb1cbf32ad5a78ed0381469934c7d"
+    HunchAPI.token = @current_user.auth_token
   end
 end

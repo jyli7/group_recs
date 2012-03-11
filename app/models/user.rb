@@ -1,13 +1,5 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  validates_presence_of :email
-  
   def get_auth_token(auth_token_key, user_id)
     get_auth_token = open("http://api.hunch.com/api/v1/get-auth-token/?app_id=3147694&auth_token_key=#{auth_token_key}&auth_sig=f7687b26dbb82fa80198830ad026b43837e8cfc2").read
     auth_token_json = JSON.parse(get_auth_token)

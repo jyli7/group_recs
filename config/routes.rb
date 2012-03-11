@@ -1,9 +1,11 @@
 Groupit::Application.routes.draw do
   
-  devise_for :users
+  get "home/index"
 
-  root to: 'pages#index'
-  match 'after_hunch' => 'pages#after_hunch'
+  root to: 'home#index'
+  get '/login' => 'sessions#new', :as => :login
+  match '/after_hunch' => 'sessions#create', :as => :register
+  get '/logout' => 'sessions#destroy', :as => :logout
   
   match '/recommendations/:user_id' => 'recommendations#show'
   get '/user/friends' => 'friends#index', :as => :user_friends
