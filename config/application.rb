@@ -2,6 +2,9 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+HUNCH_SECRET = "7c8a1ee08bf2acaf0cb50d6c97aee78a6a7177b5"
+HUNCH_ID = "3147694"
+
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require *Rails.groups(:assets => %w(development test))

@@ -10,11 +10,13 @@ class HunchAPI
     end
 
     def get_token(auth_token_key)
-      get_data(get_token_url(auth_token_key)).slice(:user_id, :auth_token)
+      token_url = get_token_url(auth_token_key)
+      auth_sig = HunchUtils.auth_sig(token_url)
+      get_data("#{token_url}&auth_sig=#{auth_sig}").slice(:user_id, :auth_token)
     end
 
     def get_token_url(auth_token_key)
-      "#{base_url}/get-auth-token/?app_id=3147694&auth_sig=f7687b26dbb82fa80198830ad026b43837e8cfc2&auth_token_key=#{auth_token_key}"
+      "#{base_url}/get-auth-token/?app_id=3147694&auth_token_key=#{auth_token_key}"
     end
   
     def login_url
