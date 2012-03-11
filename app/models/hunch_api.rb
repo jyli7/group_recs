@@ -13,7 +13,7 @@ class HunchAPI
       'http://hunch.com/authorize/v1/?app_id=3147694&next=/after_hunch'
     end
   
-    def get_friends(limit = 50)
+    def get_friends(limit)
       get_data(friends_url(limit))["friends"]
     end
   
@@ -35,7 +35,7 @@ class HunchAPI
     end
     
     def get_group_recs(user_ids, limit)
-      get_data(group_recs_url(user_ids, limit=25))["recommendations"]
+      get_data(group_recs_url(user_ids, limit))["recommendations"]
     end  
   end
 end

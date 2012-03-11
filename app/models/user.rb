@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
     single_result_json = JSON.parse(single_result)
   end
   
-  def friends(limit = 50)
+  def friends(limit = 15)
     @friends ||= HunchAPI.get_friends(limit).map { |friend| Friend.new(friend) }
   end
   
