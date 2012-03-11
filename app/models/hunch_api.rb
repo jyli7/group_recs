@@ -8,6 +8,14 @@ class HunchAPI
     def token
       @token
     end
+
+    def get_token(auth_token_key)
+      get_data(get_token_url(auth_token_key)).slice(:user_id, :auth_token)
+    end
+
+    def get_token_url(auth_token_key)
+      "#{base_url}/get-auth-token/?app_id=3147694&auth_sig=f7687b26dbb82fa80198830ad026b43837e8cfc2&auth_token_key=#{auth_token_key}"
+    end
   
     def login_url
       'http://hunch.com/authorize/v1/?app_id=3147694&next=/after_hunch'
