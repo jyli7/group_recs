@@ -1,5 +1,7 @@
 Groupit::Application.routes.draw do
   
+  devise_for :users
+
   root to: 'pages#index'
   match 'after_hunch' => 'pages#after_hunch'
   post '/pages/get_user_email' => 'pages#get_user_email'
