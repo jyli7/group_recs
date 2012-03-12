@@ -1,2 +1,22 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+.span12
+	%h1 Your Friends
+
+	.span6#recommendations_button
+		=form_for :recommendations, :url => recommendations_path, :html => {:id => "recommendations_form"}, :method => :get do |f|
+			=f.hidden_field :user_ids
+			=f.submit "Get recommendations", :class => "btn"
+	.filter
+		%input#search{:name => "search"}
+		%label{:for => "search"} Type a friend's name
+
+
+
+
+#friends_container.span12
+	-@friends.each do |friend|
+		%a.friend_block.span3{:href => "#", :id => friend.user_id}
+			.friend_block_content
+				.friend_img= image_tag(friend.image_url)			
+				.name= friend.name
+				.clearfix
+	

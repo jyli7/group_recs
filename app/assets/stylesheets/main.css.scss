@@ -3,28 +3,72 @@
 	height: 50px;
 }
 
-.friend_block {
-	width: 300px;
-	height: 60px;
-	position: relative;
+#friends_container {
+	display: block;
+}
 
-	.check_box, .friend_img, .name {
+.friend_block.selected {
+	background: #E1F1F1;
+}
+
+.friend_block {
+	margin: 5px;
+	border: 1px solid #DDD;
+	background: #FAFAFA;
+	cursor: hand;
+	display: block;
+	
+	.friend_block_content {
+		margin: 12px;
+		height: 50px;		
+	}
+
+	.friend_img, .name {
 		position:relative;
 		float:left;
-	}
-
-	.friend_img {
-		margin-left:10px;
-	}
-	
-	.check_box {
-		margin-left:5px;
-		top:16px;
+		margin: 0;
+		padding: 0;
+		word-wrap: break-word;
 	}
 	
 	.name {
-		display:inline-block;
-		top:16px;
-		margin-left:15px;
+		margin-top: 5px;
+		padding-left: 12px;
+		width:132px;
+		font-size: 16px;
 	}
+
+}
+
+a.friend_block {
+	color: #4E514E;
+	text-decoration: none;
+	
+	&:hover {
+		box-shadow: 0 0 3px #497fb8;
+	} 
+}
+
+a.friend_block.selected:hover{
+	background: #FFCCCC;
+}
+
+.hidden {
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+
+.filter #search, .filter label {
+	float: right;
+	margin-right: 15px;
+}
+
+.filter label {
+	font-size: 14px;
+	margin-top: 4px;
+}
+
+#recommendations_button {
+	margin-left:0px;
 }

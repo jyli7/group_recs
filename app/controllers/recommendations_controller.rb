@@ -2,7 +2,13 @@ class RecommendationsController < ApplicationController
   protect_from_forgery
   
   def show
-    @user = User.find(params[:user_id])
-    @books = @user.get_recommended_books(@user.auth_token, 10)
+    @group_recs = current_user.group_recs(user_ids)
   end
+  
+  private
+  
+  def user_ids
+    params[:recommendations][:user_ids].split(',')
+  end
+  
 end
