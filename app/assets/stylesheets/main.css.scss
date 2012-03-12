@@ -1,3 +1,7 @@
+body {
+  font-size: 14px;
+}
+
 .movie_img {
 	width:40px;
 	height: 50px;
@@ -62,12 +66,12 @@ a.friend_block.selected:hover{
 	border: none;
 }
 
-.search_field #search, .filter label {
+.search_field #search, .search_field label {
 	float: right;
 	margin-right: 15px;
 }
 
-.filter label {
+.search_field label {
 	font-size: 14px;
 	margin-top: 4px;
 }
@@ -77,7 +81,7 @@ a.friend_block.selected:hover{
 }
 
 #header {
-	margin:30px	;
+	margin: 30px 0;
 }
 
 .right {
@@ -87,4 +91,15 @@ a.friend_block.selected:hover{
 .user_details {
 	padding-right: 10px;
 	padding-top: 5px;
+}
+
+a.logout {
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+}
+
+a.logout:hover {
+  text-decoration: underline;
+  color: black;
 }

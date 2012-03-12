@@ -8,11 +8,7 @@
 			=f.submit "Get recommendations", :class => "btn"
 	.search_field
 		%input#search{:name => "search"}
-		%label{:for => "search"} Type a friend's name
-	.filters
-		%a#show_selected{:href => "#"} Show selected only
-		%a#show_all.hidden{:href => "#"} Show all friends
-		%a#clear_selections{:href => "#"} Clear all selections
+		%label{:for => "search" } Type a friend's name
 
 #friends_container.span12
 	-@friends.each do |friend|
