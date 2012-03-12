@@ -50,7 +50,7 @@ a.friend_block {
 }
 
 a.friend_block.selected:hover{
-	background: #FFCCCC;
+//	background: #FFCCCC;
 }
 
 .hidden {
@@ -59,7 +59,7 @@ a.friend_block.selected:hover{
 	overflow: hidden;
 }
 
-.filter #search, .filter label {
+.search_field #search, .filter label {
 	float: right;
 	margin-right: 15px;
 }

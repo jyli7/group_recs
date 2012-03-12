@@ -18,7 +18,24 @@ var Recommendations = {
 			e.preventDefault();
 			var block = $(this);
 			block.hasClass('selected') ? block.removeClass("selected") : block.addClass("selected")
-		})
+		});
+		
+		$('#show_selected').click(function(e) {
+			e.preventDefault();
+			$('.friend_block, #show_selected').addClass('hidden');
+			$('.friend_block.selected, #show_all').removeClass('hidden');
+		});
+		
+		$('#show_all').click(function(e){
+			e.preventDefault();
+			$(this).addClass('hidden');
+			$('.friend_block, #show_selected').removeClass('hidden');
+		});
+		
+		$('#clear_selections').click(function(e){
+			e.preventDefault();
+			$('.selected').removeClass('selected');
+		});
 	},
 	
 	on_submit_form: function() {

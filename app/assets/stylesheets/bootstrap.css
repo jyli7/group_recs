@@ -114,7 +114,7 @@ body {
 }
 a {
   color: #0088cc;
-  text-decoration: none;
+  cursor:pointer;
 }
 a:hover {
   color: #005580;
