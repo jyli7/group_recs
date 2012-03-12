@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304230239) do
+ActiveRecord::Schema.define(:version => 20120312210518) do
 
   create_table "users", :force => true do |t|
     t.string   "auth_token"
     t.string   "hunch_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "image_url"
   end
 
 end

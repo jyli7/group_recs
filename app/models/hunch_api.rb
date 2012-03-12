@@ -31,6 +31,10 @@ class HunchAPI
       "#{base_url}/get-friends?auth_token=#{token}&limit=#{limit}"
     end
     
+    def user_url
+      "#{base_url}/get-user?auth_token=#{token}"
+    end
+    
     def group_recs_url(user_ids, limit)
       ids_list = user_ids.join(',')
       "#{base_url}/get-recommendations?topic_ids=list_movie&auth_token=#{token}&group_user_ids=#{ids_list}&limit=#{limit}"
@@ -46,6 +50,10 @@ class HunchAPI
     
     def get_group_recs(user_ids, limit)
       get_data(group_recs_url(user_ids, limit))["recommendations"]
-    end  
+    end
+    
+    def get_user
+      get_data(user_url).slice(:first_name, :image_url)
+    end
   end
 end
