@@ -5,11 +5,7 @@ class User < ActiveRecord::Base
   end
   
   def friends(limit = 20)
-    unless @friends
-      new_friends = HunchAPI.get_friends(limit).map { |friend| Friend.new(friend) }
-      @friends = new_friends.sort! { |a, b| a.name.downcase <=> b.name.downcase }
-    end
-    @friends
+    @frieendw ||= HunchAPI.get_friends(limit).map { |friend| Friend.new(friend) }.sort
   end
   
   def group_recs(user_ids, limit = 15)

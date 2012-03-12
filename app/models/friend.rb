@@ -10,4 +10,8 @@ class Friend
   def to_s
     "id: #{user_id}, name: #{name}"
   end
+  
+  def <=>(friend)
+    name <=> friend.name
+  end
 end
