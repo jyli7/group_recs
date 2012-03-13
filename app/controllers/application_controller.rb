@@ -2,10 +2,12 @@ require 'open-uri'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
+
+  rescue_from OpenURI::HTTPError, :with => :revoked_application
+
   before_filter :require_user
   before_filter :set_token, :if => :current_user
-
+ 
   private
 
   def require_user
@@ -19,5 +21,10 @@ class ApplicationController < ActionController::Base
     
   def set_token
     HunchAPI.token = @current_user.auth_token
+  end
+
+  def revoked_application
+    User.destroy(session[:user_id]) rescue nil
+    session[:user_id] = nil
   end
 end
