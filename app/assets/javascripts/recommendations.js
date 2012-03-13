@@ -57,7 +57,7 @@ var Recommendations = {
 		for (i = 0; i < friend_blocks.length; i++){
 			block = friend_blocks.eq(i);
 			name = block.find('.name').html().toLowerCase();
-			if (name.indexOf(typed_in) == -1 && !block.hasClass('selected')) {
+			if (name.indexOf(typed_in) === -1 && !block.hasClass('selected')) {
 				block.addClass('hidden');
 			} else {
 				block.removeClass('hidden');
