@@ -6,6 +6,8 @@
         =f.hidden_field :user_ids
         =f.submit "Get Movie Recommendations!", :class => "btn btn-primary btn-large"
   .search_field
+    %a.clear_search{ :href => '#', :style => "display:none" }
+      %i.icon-remove
     %input#search{:name => "search"}
     %label{:for => "search" } Type a friend's name
 

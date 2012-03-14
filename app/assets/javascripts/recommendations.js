@@ -36,6 +36,11 @@ var Recommendations = {
 			e.preventDefault();
 			$('.selected').removeClass('selected');
 		});
+
+    $('.clear_search').click(function() {
+      $('#search').val('');
+      Recommendations.filter('');
+    })
 	},
 	
 	on_submit_form: function() {
@@ -50,6 +55,7 @@ var Recommendations = {
 	filter: function(typed_in) {
 		var name, block;
 		var friend_blocks = Recommendations.friend_blocks;
+    typed_in.length ? $('.clear_search').show() : $('.clear_search').hide();
 		if (typed_in.length < 3) {
 			friend_blocks.removeClass('hidden');
 			return;
