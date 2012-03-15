@@ -153,12 +153,36 @@ li.movie {
   margin-right: 20px;
 }
 
+.movie .details {
+  float: left;
+  width: 600px;
+  margin: 0;
+  padding: 0;
+}
+
 .movie .title {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
+
+  span {
+    float: left;
+  }
 }
 
 p {
   font-size: 14px;
 }
+
+
+  .stars {
+    background-image: url('../img/stars.png');
+    width: 65px;
+    height: 13px;
+    float: left;
+    margin-top: 3px;
+    margin-left: 5px;
+  }
+
+
+
