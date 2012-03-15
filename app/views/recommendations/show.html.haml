@@ -1,11 +1,18 @@
-%table
-	-@group_recs.each do |rec|
-		%tr
-			%td=rec.name
-			%td=image_tag(rec.image_url, {:class => "movie_img"})
-			%td=rec.description
-			%td=rec.trailer
-			%td=rec.rating
-			%td=rec.rt_rating
-			%td=rec.url
+#recommendations_text Here are some recommendations for you and your friends!
+%ul#movies.span12
+  -@group_recs.each do |rec|
+    %li.movie
+      .image= image_tag(rec.image_url)
+      .title= rec.title
+      %p.directed_by
+        %strong Directed by:
+        = rec.directed_by
+      %p.synopsis
+        %strong Synopsis:
+        = rec.synopsis
+      .clearfix
+      -# %td=rec.trailer
+      -# %td=rec.rating
+      -# %td=rec.rt_rating
+      -# %td=rec.url
 

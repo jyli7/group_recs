@@ -2,17 +2,12 @@ body {
   font-size: 14px;
 }
 
-.movie_img {
-	width:40px;
-	height: 50px;
-}
-
 #friends_container {
 	display: block;
 }
 
 .friend_block.selected {
-	background: #E1F1F1;
+	background: #D9EDF7;
 }
 
 .friend_block {
@@ -130,4 +125,40 @@ a.logout:hover {
 
 a.btn {
   text-decoration: none;
+}
+
+#recommendations_text {
+  font-size: 18px;
+}
+
+ul#movies {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li.movie {
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+  margin-bottom: 20px;
+	border: 1px solid #DDD;
+	background: #FAFAFA;
+}
+
+.movie .image {
+  float: left;
+  width: 240px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.movie .title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
 }
