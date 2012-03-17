@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FriendsController do
+describe HomeController do
   before do
     @user = Factory(:user)
     stub_friends_call
@@ -18,4 +18,5 @@ describe FriendsController do
       assigns(:user).should == @user
     end
   end
+  
 end

@@ -16,5 +16,4 @@ describe Friend do
     end
   end
   
-  
 end

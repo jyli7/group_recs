@@ -56,5 +56,6 @@ class HunchAPI
     def get_group_recs(user_ids, limit)
       get_data(group_recs_url(user_ids, limit))["recommendations"]
     end
+    
   end
 end

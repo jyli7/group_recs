@@ -37,7 +37,15 @@ describe HunchAPI do
     end
       
     it "should return a list of friends" do
-      HunchAPI.get_friends.length.should > 1
+      HunchAPI.get_friends(10).length.should > 1
     end
   end
+  
+  describe "get_data" do
+    it "should return a hash" do
+      HunchAPI.get_data("http://api.hunch.com/api/v1/get-user?auth_token=b05a90da871cb1cbf32ad5a78ed0381469934c7d").class.should == ActiveSupport::HashWithIndifferentAccess
+    end
+  end
+  
+  
 end
