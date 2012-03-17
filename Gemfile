@@ -16,7 +16,6 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'ruby-debug19'
 gem 'jquery-rails'
 
 # Use unicorn as the web server
@@ -32,6 +31,7 @@ group :development do
   gem 'rspec-rails'
   gem 'guard'
   gem 'guard-rspec'
+  gem 'ruby-debug19'
 end
 
 group :test do
