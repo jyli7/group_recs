@@ -47,5 +47,22 @@ describe HunchAPI do
     end
   end
   
+  describe "get_user" do
+    it "should return a hash with first_name and image_url" do
+      HunchAPI.get_user.should have_key(:first_name)
+      HunchAPI.get_user.should have_key(:image_url)
+    end
+  end
+
+  describe "get_friends" do
+    it "should return an array of hashes with a first_name, last_name, and user_id" do
+      HunchAPI.get_friends(15).class.should == Array
+      HunchAPI.get_friends(15).first.should have_key(:first_name)
+      HunchAPI.get_friends(15).first.should have_key(:last_name)
+      HunchAPI.get_friends(15).first.should have_key(:user_id)
+    end
+  
+  end
+
   
 end
