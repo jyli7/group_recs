@@ -40,7 +40,12 @@ var Recommendations = {
     $('.clear_search').click(function() {
       $('#search').val('');
       Recommendations.filter('');
-    })
+    });
+
+    $('#load_more').click(function(e) {
+      e.preventDefault();
+      Recommendations.load_more();
+    });
 	},
 	
 	on_submit_form: function() {
@@ -69,5 +74,14 @@ var Recommendations = {
 				block.removeClass('hidden');
 			}
 		}
-	}
+	},
+
+  load_more: function() {
+      $('.movie.hidden').slice(0,5).each(function(index, element) {
+        $(element).removeClass('hidden');
+      })
+      if(!$('.movie.hidden').length) {
+        $('#load_more').hide();
+      }
+  }
 }

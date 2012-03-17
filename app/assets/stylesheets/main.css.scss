@@ -1,5 +1,6 @@
 body {
   font-size: 14px;
+  margin-bottom: 60px;
 }
 
 #friends_container {
@@ -190,5 +191,12 @@ li.movie {
     margin-left: 5px;
   }
 
+#load_more_wrapper, #load_more {
+  width: 100px;
+}
 
-
+#load_more_wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0;
+}

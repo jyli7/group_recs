@@ -1,7 +1,7 @@
 #recommendations_text Here are some recommendations for you and your friends!
 %ul#movies.span12
-  -@group_recs.each do |rec|
-    %li.movie
+  -@group_recs.each_with_index do |rec, i|
+    %li{ :class => (i > 4 ? "movie hidden" : "movie") }
       .image= image_tag(rec.image_url)
       .details
         .title
@@ -16,4 +16,6 @@
           = rec.synopsis
       .clearfix
         -# %td=rec.trailer
+  #load_more_wrapper
+    = link_to "Load More", "#", :id => "load_more", :class => 'btn btn-large'
 
