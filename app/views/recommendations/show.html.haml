@@ -14,8 +14,10 @@
         %p.synopsis
           %strong Synopsis:
           = rec.synopsis
+        %p.trailer
+          = link_to "Watch Trailer", rec.trailer, :target => "_blank"
       .clearfix
-        -# %td=rec.trailer
+
   #load_more_wrapper
     = link_to "Load More", "#", :id => "load_more", :class => 'btn btn-large'
 

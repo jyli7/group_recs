@@ -200,3 +200,15 @@ li.movie {
   margin-left: auto;
   padding: 0;
 }
+
+.trailer {
+  margin-top: 15px;
+  a {
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
