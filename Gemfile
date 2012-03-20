@@ -47,3 +47,7 @@ group :test do
   gem 'capybara'
   gem 'spork', '0.9.0.rc8'
 end
+
+group :production do
+  gem 'pg'
+end
