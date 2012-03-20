@@ -1,3 +1,6 @@
+HUNCH_SECRET = "hunch-secret"
+HUNCH_ID = "hunch-id"
+
 Groupit::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 

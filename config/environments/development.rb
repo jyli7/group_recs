@@ -1,3 +1,6 @@
+HUNCH_SECRET = "7c8a1ee08bf2acaf0cb50d6c97aee78a6a7177b5"
+HUNCH_ID = "3147694"
+
 Groupit::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
