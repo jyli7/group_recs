@@ -32,6 +32,7 @@ group :development do
   gem 'guard'
   gem 'guard-rspec'
   gem 'ruby-debug19'
+  gem 'heroku'
 end
 
 group :test do
