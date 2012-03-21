@@ -7,7 +7,7 @@ class HunchAPI
     end
     
     def login_url 
-      "http://hunch.com/authorize/v1/?app_id=3147694&next=/after_hunch"
+      "http://hunch.com/authorize/v1/?app_id=#{HUNCH_ID}&next=/after_hunch"
     end
     
     def friends_url(limit)
@@ -36,13 +36,13 @@ class HunchAPI
     end
     
     def get_token_url(auth_token_key)
-      "#{base_url}/get-auth-token/?app_id=3147694&auth_token_key=#{auth_token_key}"
+      "#{base_url}/get-auth-token/?app_id=#{HUNCH_ID}&auth_token_key=#{auth_token_key}"
     end
     
     def get_token(auth_token_key)
       token_url = get_token_url(auth_token_key)
       auth_sig = HunchUtils.auth_sig(token_url)
-      get_data("#{token_url}&auth_sig=#{auth_sig}").slice(:user_id, :auth_token)
+      get_data("#{token_url}&auth_sig=#{auth_sig}").slice(:user_idsd, :auth_token)
     end
     
     def get_user
