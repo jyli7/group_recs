@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   
   after_create :get_info
 
+  validates_presence_of :hunch_id
+
   def user_id=(value)
     self.hunch_id = value
   end
