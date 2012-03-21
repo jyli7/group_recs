@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
 
   def create
     credentials = HunchAPI.get_token(params[:auth_token_key])
+    logger.info(params.inspect)
+    logger.info(credentials)
     @user = User.find_by_hunch_id(credentials[:user_id]) || User.create(credentials)
     session[:user_id] = @user.id
     redirect_to root_url
