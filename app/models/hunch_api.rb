@@ -20,7 +20,7 @@ class HunchAPI
     
     def group_recs_url(user_ids, limit)
       ids_list = user_ids.join(',')
-      "#{base_url}/get-recommendations?topic_ids=list_movie&auth_token=#{token}&group_user_ids=#{ids_list}&limit=#{limit}"
+      "#{base_url}/get-recommendations?topic_ids=list_movie&auth_token=#{token}&group_user_ids=#{ids_list}&limit=#{limit}&wildcards=1"
     end
     
     def token=(token)
