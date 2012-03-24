@@ -6,6 +6,7 @@ Groupit::Application.routes.draw do
   get '/login' => 'sessions#new', :as => :login
   match '/after_hunch' => 'sessions#create', :as => :register
   get '/logout' => 'sessions#destroy', :as => :logout
+  match '/user/:id' => 'home#index', :as => :user
     
   get 'recommendations' => 'recommendations#show', :as => :recommendations
     
