@@ -12,14 +12,12 @@ class SessionsController < ApplicationController
     credentials = HunchAPI.get_token(params[:auth_token_key]).merge(:user_id => params[:user_id])
     @user = User.find_by_hunch_id(credentials[:user_id]) || User.create(credentials)
     session[:user_id] = @user.id
-    flash[:notice] = "You're logged in!"
-    redirect_to root_url
+    redirect_to root_url, :notice => "You're logged in!"
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:notice] = "You've been logged out"
-    redirect_to login_url
+    redirect_to login_url, :notice => "You've been logged out"
   end
   
 end

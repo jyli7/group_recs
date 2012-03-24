@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   rescue_from OpenURI::HTTPError, :with => :revoked_application
-  # rescue_from Exception, :with => :error_page
+  rescue_from Exception, :with => :error_page
 
   before_filter :require_user
   before_filter :set_token, :if => :current_user
@@ -12,14 +12,11 @@ class ApplicationController < ActionController::Base
   private
 
   def require_user
-    redirect_to login_url unless current_user
+    redirect_to login_url, :notice => "You need to log in to access this page" unless current_user
   end
   
   def ensure_not_logged_in
-    if current_user
-      flash[:notice] = "You're already logged in!"
-      redirect_to root_path
-    end
+    redirect_to root_path, :notice => "You're already logged in!" if current_user
   end
   
   def current_user
