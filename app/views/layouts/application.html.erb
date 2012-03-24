@@ -5,7 +5,6 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-	<link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
 	<script type="text/javascript">
 
 	  var _gaq = _gaq || [];
@@ -22,6 +21,14 @@
 	</script>
 </head>
 <body>
+
+	<% if flash[:notice] || flash[:error] %>
+		<div class="navbar">
+			<div class="alert alert-<%= flash[:notice] ? 'info' : 'error' %>">
+				<%= flash[:notice] || flash[:error] %>
+			</div>
+		</div>
+	<% end %>	
 	
 	<div class="container">
 		
@@ -47,7 +54,7 @@
 
 		<%= yield %>
 
-    <div class="span6 footer">
+    <div class="span6 footer" id="made_by">
       <p>
         Made by <a href="http://jimmy-li.net/blog">Jimmy Li</a> and <a href="http://jordinl.com">Jordi Noguera</a>
       </p>
@@ -56,7 +63,7 @@
       </p>
     </div>
 		<div id="hunch_powered"> 
-			Powered by <%= image_tag 'hunch_logo.png', :size => "60x60", :id => "hunch_logo" %>
+			Powered by <%= link_to image_tag('hunch_logo.png', :size => "60x60", :id => "hunch_logo"), 'http://www.hunch.com' %>
 		</div>
 			
 

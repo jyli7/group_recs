@@ -17,7 +17,8 @@
           %strong Synopsis:
           = rec.synopsis
         %p.trailer
-          = link_to "Watch Trailer", rec.trailer, :target => "_blank"
+          -if rec.trailer_available?
+            =link_to "Watch Trailer", rec.trailer, :target => "_blank"
       .clearfix
 
   #load_more_wrapper

@@ -46,6 +46,8 @@ var Recommendations = {
       e.preventDefault();
       Recommendations.load_more();
     });
+
+		$('.navbar').delay(3000).slideUp(800);
 	},
 	
 	on_submit_form: function() {

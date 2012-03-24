@@ -10,4 +10,8 @@ class Rec
     @synopsis = rec[:synopsis]
     @directed_by = rec[:directed_by]
   end
+  
+  def trailer_available?
+    trailer.start_with?("http")
+  end
 end

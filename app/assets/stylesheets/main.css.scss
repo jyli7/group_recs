@@ -212,7 +212,6 @@ li.movie {
   margin-top: 15px;
   a {
     text-decoration: none;
-    color: black;
 
     &:hover {
       text-decoration: underline;
@@ -246,11 +245,14 @@ img.right {
 }
 
 #explanation p {
-	font-family: 'Pontano Sans', "minion-pro-1","minion-pro-2", "Times New Roman", "Georgia", "serif";
-  font-size: 36px;
-  line-height: 40px;
+	font-family: "minion-pro-1","minion-pro-2", "Times New Roman", Georgia, serif;
+  font-size: 38px;
+	font-weight:500;
+  line-height:1.0em;
   text-align: center;
   margin-bottom: 35px;
+	letter-spacing: -1px;
+	color: #232323;
 }
 
 #explanation .btn_wrapper {
@@ -277,5 +279,21 @@ img.right {
 	float: right;
 	position: relative;
 	top: 21px;
-	margin-right: 10px;
+	margin-right: 14px;
+}
+
+#alert_wrapper {
+	margin: 0;
+}
+
+.alert {
+	text-align: center;
+	font-size:18px;
+	border-radius: 0;
+	margin-bottom: -20px;
+	padding: 12px 0;
+}
+
+#made_by {
+	margin-left:-3px;
 }

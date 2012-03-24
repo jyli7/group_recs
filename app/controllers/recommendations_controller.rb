@@ -2,7 +2,7 @@ class RecommendationsController < ApplicationController
   protect_from_forgery
   
   def show
-    @group_recs = current_user.group_recs(user_ids)
+    @group_recs = current_user.group_recs(user_ids).shuffle
   end
   
   private
