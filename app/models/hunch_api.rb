@@ -32,6 +32,7 @@ class HunchAPI
     end
 
     def get_data(url)
+      Rails.logger.warn("Making request to HUNCH: #{url.split('?')[0]}")
       HashWithIndifferentAccess.new(JSON.parse(open(url).read))
     end
     

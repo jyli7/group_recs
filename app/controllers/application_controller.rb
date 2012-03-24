@@ -35,7 +35,8 @@ class ApplicationController < ActionController::Base
     redirect_to login_url
   end
   
-  def error_page
+  def error_page(exception)
+    logger.error(exception.message)
     render "shared/error"
   end
   
