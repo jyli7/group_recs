@@ -1,6 +1,6 @@
 = content_for :title, :Recommendations
 
-#recommendations_text Here are some recommendations for you and your friends!
+#recommendations_text Here are some movies you and your friends should watch together!
 %ul#movies.span12
   -@group_recs.each_with_index do |rec, i|
     %li{ :class => (i > 4 ? "movie hidden" : "movie") }
