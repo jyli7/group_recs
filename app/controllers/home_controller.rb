@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
 
-  before_filter :require_user
-  caches_action :index, :if => :has_friends?, :layout => :false, :cache_path => Proc.new { |c| user_path(c.send(:current_user).id) }, :expires_in => 10.minutes
+  caches_action :index, :if => [:current_user, :has_friends?], :layout => :false, :cache_path => Proc.new { |c| user_path(c.send(:current_user).id) }, :expires_in => 10.minutes
 
   def index
     @friends = current_user.friends
