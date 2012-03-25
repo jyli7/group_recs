@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def index
     @friends = current_user.friends
     unless has_friends?
-      expire_action :action => :index, :cache_path => Proc.new { |c| user_url(c.send(:current_user).id) }
+      expire_fragment(user_url(current_user).id)
       render :no_friends
     end
   end
