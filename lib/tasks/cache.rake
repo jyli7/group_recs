@@ -1,5 +1,5 @@
 namespace :cache do
-  namespace :clear => :environment do
+  task :clear => :environment do
     Rails.cache.clear
   end
 end
