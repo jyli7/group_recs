@@ -1,4 +1,6 @@
-group_recs
+Grounch
 ==========
 
-Group Movie Recommendations
+http://www.groun.ch
+
+Group Movie Recommendations, Powered by Hunch
